@@ -2,10 +2,6 @@ import React from "react"
 
 import PlaceCard from "../Components/PlaceCard"
 
-import Place from "../Components/Place"
-
-import { Route } from "react-router-dom"
-
 import HeroImage from "../Components/HeroImage"
 
 
@@ -18,13 +14,11 @@ class PlacesCollection extends React.Component{
       <PlaceCard key={place.id} place={place}/>)
 
         // <Dropdown handleChange={this.props.handleChange}/>
-
+  // <HeroImage/>
     return(
 
       <div>
-        <HeroImage/>
-        <br/>
-        <div className="ui vertical menu">
+
           <select name="select" onChange={this.props.handleChange} className="ui dropdown">
             <option value="all">All</option>
             <option value="sightseeing">Sightseeing</option>
@@ -36,7 +30,7 @@ class PlacesCollection extends React.Component{
             <option value="eating">Eating</option>
             <option value="doing_sports">Doing Sports</option>
           </select>
-        </div>
+
 
         <div className="ui container">
          <div className="ui three cards">{place}</div>

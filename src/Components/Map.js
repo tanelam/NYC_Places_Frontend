@@ -34,7 +34,7 @@ class Map extends Component {
           <Marker
             lat={this.props.latitud}
             lng={this.props.longitud}
-            text={<img src= {require("./starpin.png")}/>}
+            text={<img src= {require("./starpin.png")} alt=""/>}
           />
         </GoogleMapReact>
       </div>
