@@ -2,8 +2,6 @@ import React from "react"
 
 import { Slide } from 'react-slideshow-image';
 
-import { NavLink } from 'react-router-dom'
-
 import Map from "./Map"
 
 
@@ -40,45 +38,54 @@ class Place extends React.Component {
 
     return(
       <React.Fragment>
-            <h1>{this.state.place.name}</h1>
-          <header>
-            <ul>
-              <a href="/nycplaces">Home</a>
-            </ul>
-          </header>
+      <div className="ui secondary pointing massive menu">
+        <a className="active pink item" href="/nycplaces">
+          Home
+        </a>
+      </div>
+    <div className="ui container">
+
+
+         <h1 className="ui left aligned huge header">
+            <img src={this.state.place.card_photo} class="ui circular image" alt=""/>
+              {this.state.place.name}
+          </h1>
 
           <div className="ui two column grid">
+            <div className="center aligned column">
+
+            <h2>Information:</h2>
+            <h3>{this.state.place.long_description}</h3>
+
+            </div>
+
             <div className="column">
 
-          <div className="ui raised very padded text container segment">
-          <h2>Information:</h2>
-          <h3>{this.state.place.long_description}</h3>
+              <div className="slide-container">
+                <Slide
+                   images={ images }
+                   duration={100000}
+                   transitionDuration={2000}
+                 />
+              </div>
+            </div>
           </div>
 
-        </div>
-        <div className="column">
-          <div className="slide-container">
-            <Slide
-             images={ images }
-             duration={100000}
-             transitionDuration={2000}
-           />
+
+          <div className="ui two column grid">
+              <div className="center aligned column">
+                <video src={this.state.place.video} width="800" height="600" autoPlay>
+                </video>
+              </div>
+
+
+              <div className="center aligned column">
+                <h2>Address: </h2>
+                <h3>{this.state.place.address}</h3>
+                <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
+              </div>
           </div>
-        </div>
       </div>
-
-      <div className="ui two column grid">
-          <div className="column">
-          <video src={this.state.place.video} width="800" height="600" autoPlay>
-          </video>
-        </div>
-
-          <div className="column">
-            <h2>Address: </h2>
-            <h3>{this.state.place.address}</h3>
-            <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
-          </div>
-        </div>
       </React.Fragment>
       )
     }

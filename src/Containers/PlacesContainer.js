@@ -1,14 +1,8 @@
 import React from "react"
 
-import { Route } from "react-router-dom"
-
-import Place from "../Components/Place"
-
 import PlacesCollection from "./PlacesCollection"
 
-import Search from "../Components/Search"
-
-import HeroImage from "../Components/HeroImage"
+import Login from "../Components/Login"
 
 
 class PlacesContainer extends React.Component{
