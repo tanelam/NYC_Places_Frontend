@@ -43,21 +43,22 @@ class Place extends React.Component {
           Home
         </a>
       </div>
-    <div className="ui container">
 
+      <div className="ui container">
 
-         <h1 className="ui left aligned huge header">
-            <img src={this.state.place.card_photo} class="ui circular image" alt=""/>
-              {this.state.place.name}
-          </h1>
+        <h1 className="ui left aligned huge header">
+          <img src={this.state.place.card_photo} class="ui circular image" alt=""/>
+          {this.state.place.name}
+        </h1>
+
+        <div className="ui one column grid">
+            <div className="center aligned column">
+              <video src={this.state.place.video} width="100%" height="600" autoPlay>
+              </video>
+            </div>
+        </div>
 
           <div className="ui two column grid">
-            <div className="center aligned column">
-
-            <h2>Information:</h2>
-            <h3>{this.state.place.long_description}</h3>
-
-            </div>
 
             <div className="column">
 
@@ -69,22 +70,24 @@ class Place extends React.Component {
                  />
               </div>
             </div>
+
+            <div className="center aligned column">
+
+            <h2>Information:</h2>
+            <h3>{this.state.place.long_description}</h3>
+
+            </div>
+
           </div>
 
 
-          <div className="ui two column grid">
-              <div className="center aligned column">
-                <video src={this.state.place.video} width="800" height="600" autoPlay>
-                </video>
+              <div className="ui one column grid">
+                <div className="column">
+                  <h2>Address: </h2>
+                  <h3>{this.state.place.address}</h3>
+                  <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
+                </div>
               </div>
-
-
-              <div className="center aligned column">
-                <h2>Address: </h2>
-                <h3>{this.state.place.address}</h3>
-                <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
-              </div>
-          </div>
       </div>
       </React.Fragment>
       )
