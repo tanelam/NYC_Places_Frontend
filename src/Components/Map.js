@@ -23,7 +23,7 @@ class Map extends Component {
      console.log(lat, lng)
     return (
       // Important! Always set the container height explicitly
-      <div className="map" style={{ height: '50vh', width: '50%' }}>
+      <div className="map" style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
           bootstrapURLKeys={{ key: "AIzaSyCTgj-dcw-SGZnUcbymLnBU2ppRKp3Uhjg" }}
