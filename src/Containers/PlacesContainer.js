@@ -29,25 +29,10 @@ class PlacesContainer extends React.Component{
   }
 
   handleChange = (event) => {
-    console.log(event.target)
     this.setState({
       selectedCategory: event.target.value
     })
   }
-
-  // handleChange = (event) => {
-  //   console.log(event.target.innerHTML.toLowerCase())
-  //   this.setState({
-  //     selectedCategory: event.target.innerHTML.toLowerCase()
-  //   })
-  // }
-
-  handleOnChange = (event) => {
-    this.setState({
-      input: event.target.value
-    })
-  }
-
 
   filterCategory = () => {
     if(this.state.selectedCategory === "all"){
@@ -70,6 +55,7 @@ class PlacesContainer extends React.Component{
     return(
       <div>
          <PlacesCollection places={filteredCategories}  handleChange={this.handleChange}/>
+         
       </div>
     )
   }

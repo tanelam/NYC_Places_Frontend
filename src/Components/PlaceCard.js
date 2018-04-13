@@ -7,7 +7,7 @@ class PlaceCard extends React.Component{
   render(){
     // console.log(props.place)
   return(
-    
+
     	<div className="pink card">
         <div className="ui fluid image">
           <Link to={`/nycplaces/${this.props.place.id}`} key={this.props.place.id} >

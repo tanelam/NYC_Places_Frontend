@@ -10,7 +10,7 @@ class PlacesCollection extends React.Component{
   render(){
 
     const place = this.props.places.map(place =>
-
+      
       <PlaceCard key={place.id} place={place}/>)
 
         // <Dropdown handleChange={this.props.handleChange}/>
