@@ -43,19 +43,13 @@ class PlacesContainer extends React.Component{
     }
   }
 
-  // filterCategory = () => {
-  //   let placesArray = [...this.state.places]
-  //   let filteredPlaces = placesArray.filter( place => (place.name).toLowerCase().includes(this.state.input.toLowerCase()))
-  //   return filteredPlaces
-  // }
-
   render(){
     // console.log(this.state)
     const filteredCategories = this.filterCategory()
     return(
       <div>
          <PlacesCollection places={filteredCategories}  handleChange={this.handleChange}/>
-         
+
       </div>
     )
   }

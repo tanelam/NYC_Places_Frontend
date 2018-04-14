@@ -16,9 +16,18 @@ class Place extends React.Component {
   fetchPlace = () => (
     fetch(`http://localhost:8000/places/${this.props.match.params.id}`)
     .then(resp => resp.json())
-     .then(place => this.handleResponse(place))
-     // .then(place => console.log(place))
+    .then(place => this.handleResponse(place))
   )
+
+  // fetchEvents = () => (
+  //   fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=2&radius=2&location=${this.state.place.zip}&start_date=1523880000&end_date=1525089600&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
+  //       headers: {
+  //         Authorization: "Bearer 3GmXb2VUgl0_rI413CrQ7llI71TbMsYpa3_-J21eW3AgQ18qtdNuyUra8KyjTezYx-nPOAvhQDqNKLOhfpSRAA259Uo9aWQcDLLPYGnejKvEEC0XzHYNK9IIzQTDWnYx"
+  //       }
+  //     })
+  //     .then(resp => resp.json())
+  //     .then(events => console.log(events))
+  // )
 
 
   componentDidMount = () => {
@@ -60,8 +69,11 @@ class Place extends React.Component {
 
         <div className="ui one column grid">
             <div className="center aligned column">
+              {this.state.place.video !== null ?
               <video src={this.state.place.video} width="100%" height="600" autoPlay>
-              </video>
+              </video> :
+              <video src={require("./Urban-Timer.mp4")} width="100%" height="600" autoPlay/>
+            }
             </div>
         </div>
 
