@@ -2,8 +2,6 @@ import React from "react"
 
 import PlacesCollection from "./PlacesCollection"
 
-import Login from "../Components/Login"
-
 
 class PlacesContainer extends React.Component{
 

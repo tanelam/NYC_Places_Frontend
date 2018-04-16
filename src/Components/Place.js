@@ -19,15 +19,6 @@ class Place extends React.Component {
     .then(place => this.handleResponse(place))
   )
 
-  // fetchEvents = () => (
-  //   fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=2&radius=2&location=${this.state.place.zip}&start_date=1523880000&end_date=1525089600&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
-  //       headers: {
-  //         Authorization: "Bearer 3GmXb2VUgl0_rI413CrQ7llI71TbMsYpa3_-J21eW3AgQ18qtdNuyUra8KyjTezYx-nPOAvhQDqNKLOhfpSRAA259Uo9aWQcDLLPYGnejKvEEC0XzHYNK9IIzQTDWnYx"
-  //       }
-  //     })
-  //     .then(resp => resp.json())
-  //     .then(events => console.log(events))
-  // )
 
 
   componentDidMount = () => {
@@ -40,6 +31,11 @@ class Place extends React.Component {
     })
   }
 
+  // <h1 className="ui huge header">
+  //   <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
+  //   {this.state.place.name}
+  // </h1>
+
   render(){
     const images = [
       this.state.place.main_photo,
@@ -50,7 +46,7 @@ class Place extends React.Component {
     const lng = parseFloat(this.props.longitud || "-73.98")
 
     const zip = (this.state.place.zip || "10174")
-    console.log(zip)
+
     return(
       <React.Fragment>
 
@@ -61,11 +57,18 @@ class Place extends React.Component {
       </div>
 
       <div className="ui container">
+        <div className="ui large header">
 
-        <h1 className="ui left aligned huge header">
-          <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
-          {this.state.place.name}
-        </h1>
+            <h1 className="ui large header">
+              <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
+                <div className="content">
+                  {this.state.place.name}
+                  <div className="sub header">{this.state.place.description}</div>
+                </div>
+            </h1>
+
+
+        </div>
 
         <div className="ui one column grid">
             <div className="center aligned column">
@@ -77,9 +80,9 @@ class Place extends React.Component {
             </div>
         </div>
 
-          <div className="ui two column grid">
-
-            <div className="column">
+          <div className="ui three column grid">
+            <div className="row">
+            <div className="eight wide column">
 
               <div className="slide-container">
                 <Slide
@@ -89,13 +92,10 @@ class Place extends React.Component {
                  />
               </div>
             </div>
-
-            <div className="center aligned column">
-
-              <h2>Information:</h2>
-              <h3>{this.state.place.long_description}</h3>
-
+            <div className="eight wide column">
+              <Event zip={zip}/>
             </div>
+          </div>
 
           </div>
 
@@ -106,11 +106,18 @@ class Place extends React.Component {
               <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
             </div>
           </div>
-           <Event zip={zip}/>
       </div>
       </React.Fragment>
       )
     }
   }
+
+
+  // <div className="center aligned column">
+  //
+  //   <h2>Information:</h2>
+  //   <h3>{this.state.place.long_description}</h3>
+  //
+  // </div>
 
 export default Place

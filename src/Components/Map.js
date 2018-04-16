@@ -20,13 +20,13 @@ class Map extends Component {
     const lat = parseFloat(this.props.latitud || "40.75")
     const lng = parseFloat(this.props.longitud || "-73.98")
 
-     // console.log(lat, lng)
+     console.log(lat, lng)
     return (
       // Important! Always set the container height explicitly
       <div className="map" style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
-          bootstrapURLKeys={{  }}
+          bootstrapURLKeys={{ key: "AIzaSyCTgj-dcw-SGZnUcbymLnBU2ppRKp3Uhjg" }}
           zoom={this.props.zoom}
           latitud={this.props.latitud}
           longitud={this.props.longitud}
