@@ -12,7 +12,7 @@ class EventCard extends React.Component{
             <img src={require("./eventImage.png")} alt="" />}
         </a>
         <div className="content">
-          <a className="header" href={this.props.event.event_site_url} target="_blank">{this.props.event.name}</a>
+          <a className="ui grey header" href={this.props.event.event_site_url} target="_blank">{this.props.event.name}</a>
           <div className="description">
             {this.props.event.location.display_address}
           </div>

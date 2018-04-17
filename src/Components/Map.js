@@ -26,7 +26,7 @@ class Map extends Component {
       <div className="map" style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
-          bootstrapURLKeys={{ key: "AIzaSyCTgj-dcw-SGZnUcbymLnBU2ppRKp3Uhjg" }}
+          bootstrapURLKeys={{ key: "" }}
           zoom={this.props.zoom}
           latitud={this.props.latitud}
           longitud={this.props.longitud}

@@ -19,8 +19,6 @@ class Place extends React.Component {
     .then(place => this.handleResponse(place))
   )
 
-
-
   componentDidMount = () => {
     this.fetchPlace()
   }
@@ -30,11 +28,6 @@ class Place extends React.Component {
       place: place
     })
   }
-
-  // <h1 className="ui huge header">
-  //   <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
-  //   {this.state.place.name}
-  // </h1>
 
   render(){
     const images = [
@@ -48,7 +41,7 @@ class Place extends React.Component {
       <React.Fragment>
 
       <div className="ui secondary pointing massive menu">
-        <a className="active item" href="/nycplaces">
+        <a className="active grey item" href="/nycplaces">
           NYC Places
         </a>
       </div>
@@ -56,7 +49,7 @@ class Place extends React.Component {
       <div className="ui container">
         <div className="ui large header">
 
-            <h1 className="ui large header">
+            <h1 className="ui grey large header">
               <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
                 <div className="content">
                   {this.state.place.name}
@@ -98,8 +91,8 @@ class Place extends React.Component {
 
           <div className="ui one column grid">
             <div className="column">
-              <h2>Address: </h2>
-              <h3>{this.state.place.address}</h3>
+              <h2 className="ui grey header">Address: </h2>
+              <h3 className="ui grey header">{this.state.place.address}</h3>
               <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
             </div>
           </div>

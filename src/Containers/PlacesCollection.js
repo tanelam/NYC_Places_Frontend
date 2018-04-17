@@ -18,7 +18,7 @@ class PlacesCollection extends React.Component{
 
      <div>
        <div className="ui secondary pointing massive menu">
-         <a className="active item" href="/nycplaces">
+         <a className="active grey item" href="/nycplaces">
            NYC Places
          </a>
        </div>
