@@ -16,9 +16,17 @@ class PlacesCollection extends React.Component{
   // <HeroImage/>
     return(
 
-      <div>
+     <div>
+       <div className="ui secondary pointing massive menu">
+         <a className="active item" href="/nycplaces">
+           NYC Places
+         </a>
+       </div>
 
-          <select name="select" onChange={this.props.handleChange} className="ui dropdown">
+        <div className="ui container">
+          <HeroImage/>
+          <br/>
+          <select name="select" onChange={this.props.handleChange} className="ui fluid normal dropdown">
             <option value="all">All</option>
             <option value="sightseeing">Sightseeing</option>
             <option value="discovering">Discovering</option>
@@ -29,13 +37,12 @@ class PlacesCollection extends React.Component{
             <option value="eating">Eating</option>
             <option value="doing_sports">Doing Sports</option>
           </select>
+          <br/>
 
-
-        <div className="ui container">
          <div className="ui three cards">{place}</div>
         </div>
-
       </div>
+
     )
   }
 }

@@ -42,17 +42,14 @@ class Place extends React.Component {
       this.state.place.photo_2
     ]
 
-    const lat = parseFloat(this.props.latitud || "40.75")
-    const lng = parseFloat(this.props.longitud || "-73.98")
-
     const zip = (this.state.place.zip || "10174")
 
     return(
       <React.Fragment>
 
       <div className="ui secondary pointing massive menu">
-        <a className="active pink item" href="/nycplaces">
-          Home
+        <a className="active item" href="/nycplaces">
+          NYC Places
         </a>
       </div>
 

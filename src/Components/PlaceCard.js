@@ -8,7 +8,7 @@ class PlaceCard extends React.Component{
     // console.log(props.place)
   return(
 
-    	<div className="pink card">
+    	<div className="purple card">
         <div className="ui fluid image">
           <Link to={`/nycplaces/${this.props.place.id}`} key={this.props.place.id} >
             <img alt="" src={this.props.place.main_photo} id={this.props.place.id} />

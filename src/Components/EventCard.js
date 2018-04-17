@@ -1,7 +1,5 @@
 import React from "react"
 
-import eventImage from "./eventImage.png"
-
 class EventCard extends React.Component{
 
   render(){
@@ -10,8 +8,8 @@ class EventCard extends React.Component{
       <div className="card">
         <a className="image" href={this.props.event.event_site_url} target="_blank">
           {this.props.event.image_url !== "" ?
-            <img src={this.props.event.image_url} /> :
-            <img src={require("./eventImage.png")} />}
+            <img src={this.props.event.image_url} alt="" /> :
+            <img src={require("./eventImage.png")} alt="" />}
         </a>
         <div className="content">
           <a className="header" href={this.props.event.event_site_url} target="_blank">{this.props.event.name}</a>

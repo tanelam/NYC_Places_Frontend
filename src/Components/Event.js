@@ -11,7 +11,7 @@ class Event extends React.Component{
   fetchEvents = (nextProps) => (
     fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=2&radius=2&location=${nextProps.zip}&start_date=1523880000&end_date=1525089600&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
         headers: {
-          Authorization: ""
+          Authorization: "Bearer 3GmXb2VUgl0_rI413CrQ7llI71TbMsYpa3_-J21eW3AgQ18qtdNuyUra8KyjTezYx-nPOAvhQDqNKLOhfpSRAA259Uo9aWQcDLLPYGnejKvEEC0XzHYNK9IIzQTDWnYx"
         }
       })
       .then(resp => resp.json())

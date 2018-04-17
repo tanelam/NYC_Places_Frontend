@@ -13,7 +13,6 @@ class App extends Component {
 
     return (
       <div className="App">
-
         <Switch>
          <Route exact path="/nycplaces" component={PlacesContainer}/>
          <Route path="/nycplaces/:id" component={Place}/>
