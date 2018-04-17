@@ -3,8 +3,9 @@ import React from "react"
 class EventCard extends React.Component{
 
   render(){
-    console.log(this.props.event)
+    // console.log(this.props.event)
     return(
+    <React.Fragment>
       <div className="card">
         <a className="image" href={this.props.event.event_site_url} target="_blank">
           {this.props.event.image_url !== "" ?
@@ -26,7 +27,7 @@ class EventCard extends React.Component{
           </div>
         </div>
       </div>
-
+    </React.Fragment>
     )
   }
 }

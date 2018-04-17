@@ -14,19 +14,25 @@ class Map extends Component {
       zoom: 14,
   };
 
+  // componentWillReceiveProps(nextProps){
+  //     console.log(this.props.longitud, this.props.latitud, nextProps)
+  // //   if(this.props.zip !== nextProps.zip){
+  // //     this.fetchEvents(nextProps)
+  // //   }
+  //  }
 
   render() {
 
     const lat = parseFloat(this.props.latitud || "40.75")
     const lng = parseFloat(this.props.longitud || "-73.98")
 
-     console.log(lat, lng)
+      // console.log(process.env.REACT_APP_GOOGLE_MAPS_API_KEY)
     return (
       // Important! Always set the container height explicitly
       <div className="map" style={{ height: '50vh', width: '100%' }}>
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
-          bootstrapURLKeys={{ key: "" }}
+          bootstrapURLKeys={{ key: `${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}` }}
           zoom={this.props.zoom}
           latitud={this.props.latitud}
           longitud={this.props.longitud}
