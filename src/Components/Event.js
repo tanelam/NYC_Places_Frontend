@@ -51,10 +51,10 @@ class Event extends React.Component{
      const filter = filteredEvents.map((event, index) =>
        <EventCard event={event} key={index}/>
      )
-      console.log(this.state.events.events == [] )
+
     return (
         <React.Fragment>
-      {this.state.events.length == 0 ?
+      {this.state.events.length === 0 ?
           <div className="ui active inverted dimmer">
             <div className="ui huge text loader">Loading</div>
           </div> :

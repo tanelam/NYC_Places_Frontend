@@ -3,7 +3,7 @@ import React from "react"
 class EventCard extends React.Component{
 
   render(){
-    // console.log(this.props.event)
+     // console.log(this.props.event === [])
     return(
     <React.Fragment>
       <div className="card">
