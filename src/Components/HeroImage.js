@@ -8,7 +8,7 @@ class HeroImage extends React.Component{
           <div className="column"></div>
           <div className="center aligned column">
             <img src={require("./nyc.png")} height="100" alt=""/>
-            <h1 className="ui grey header">Welcome to NYC</h1>
+            <h1 className="ui grey header">Explore NYC</h1>
           </div>
         </div>
       )

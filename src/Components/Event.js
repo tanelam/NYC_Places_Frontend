@@ -47,7 +47,7 @@ class Event extends React.Component{
 
 
      const filteredEvents = this.filterEvents()
-      console.log(filteredEvents)
+      // console.log(filteredEvents)
      const filter = filteredEvents.map((event, index) =>
        <EventCard event={event} key={index}/>
      )
@@ -59,7 +59,7 @@ class Event extends React.Component{
           <div className="ui active inverted dimmer">
             <div className="ui huge text loader">Loading</div>
           </div> :
-        <div className="ui four cards">
+        <div className="ui four raised cards">
           {filter}
         </div>
       }
