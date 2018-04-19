@@ -10,7 +10,7 @@ class Event extends React.Component{
 
   fetchEvents = (nextProps) => (
 
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=2&radius=2&location=${nextProps.zip}&start_date=1523880000&end_date=1525089600&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=4&radius=2&location=${nextProps.zip}&start_date=1523880000&end_date=1525089600&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
         }
@@ -55,10 +55,11 @@ class Event extends React.Component{
     return (
         <React.Fragment>
       {this.state.events.length === 0 ?
+
           <div className="ui active inverted dimmer">
             <div className="ui huge text loader">Loading</div>
           </div> :
-        <div className="ui two cards">
+        <div className="ui four cards">
           {filter}
         </div>
       }

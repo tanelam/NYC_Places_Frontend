@@ -70,7 +70,8 @@ class Place extends React.Component {
             </div>
         </div>
 
-          <div className="ui three column grid">
+
+          <div className="ui two column grid">
             <div className="row">
             <div className="eight wide column">
 
@@ -82,17 +83,42 @@ class Place extends React.Component {
                  />
               </div>
             </div>
-            <div className="eight wide column">
-              <Event zip={zip}/>
+            <div className="center aligned column">
+
+              <h3 className="ui grey header">{this.state.place.long_description}</h3>
+
+            </div>
+          </div>
+          </div>
+
+          <div className="ui one column grid">
+            <div className="left aligned column">
+              <div className="ui dividing large header">
+                <p className="ui grey huge header">Events Near</p>
+                <p className="ui grey huge header">This Place</p>
+              </div>
             </div>
           </div>
 
+          <div className="ui one column grid">
+          <div className="column">
+            <Event zip={zip}/>
+          </div>
+        </div>
+
+          <div className="ui two column grid">
+            <div className="column">
+              <h2 className="ui grey header">Address: </h2>
+              <h3 className="ui grey header">{this.state.place.address}</h3>
+            </div>
+            <div className="right aligned column">
+              <p className="ui grey huge header">{this.state.place.latitud}</p>
+              <p className="ui grey huge header">{this.state.place.longitud}</p>
+            </div>
           </div>
 
           <div className="ui one column grid">
             <div className="column">
-              <h2 className="ui grey header">Address: </h2>
-              <h3 className="ui grey header">{this.state.place.address}</h3>
               <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
             </div>
           </div>
@@ -101,6 +127,7 @@ class Place extends React.Component {
       )
     }
   }
+
 
 
   // <div className="center aligned column">
