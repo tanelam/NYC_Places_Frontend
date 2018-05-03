@@ -10,12 +10,12 @@
 ## How To Use
  
  * Navigate to http://localhost:3000/nycplaces in your browser.
- * See all the places available or choose one category from the dropdown.
- * Click on the picture of the place that interests you.
- * In the place page, you can see more pictures of the place using the arrows on the border of the photo.
- * Check out some of the events going on close to that place.
+ * View all the available locations or choose a category from the dropdown menu.
+ * Select the picture of the location that interests you.
+ * The location page will have more pictures of the selected location. Use the arrows on the border of the photo to navigate through the  different pictures.
+ * Check out some of the events near the selected location.
  * Look at the most rated restaurants and food options close by.
- * If you like an event or a resturant you can click on it and you will be redirected to its Yelp page. 
+ * If you like an event or a resturant listed, select by clicking on the picture or title and you will be redirected to its Yelp page. 
 
 ## Prerequisites
 
