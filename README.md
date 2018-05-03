@@ -43,4 +43,4 @@ Navigate to the web address of your server http://localhost:3000 (or whatever yo
 
 ## Cotributors
 
-* [Tania Aparicio](https://github.com/tanelam)
+[Tania Aparicio](https://github.com/tanelam)
