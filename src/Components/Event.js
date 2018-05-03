@@ -45,6 +45,7 @@ class Event extends React.Component{
 
   render(){
 
+    console.log(this.state.events)
 
      const filteredEvents = this.filterEvents()
       // console.log(filteredEvents)

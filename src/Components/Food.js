@@ -20,7 +20,7 @@ class Food extends React.Component{
   )
 
   componentWillReceiveProps(nextProps){
-    console.log(this.props.zip, nextProps)
+    // console.log(this.props.zip, nextProps)
     if(this.props.zip !== nextProps.zip){
       this.fetchFoods(nextProps)
     }
@@ -44,7 +44,7 @@ class Food extends React.Component{
   }
 
   render(){
-
+    console.log(this.state.food)
      const filteredFoods = this.filterFoods()
       console.log(filteredFoods)
      const filter = filteredFoods.map((food, index) =>
