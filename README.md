@@ -41,6 +41,6 @@ A friendly tour-guide to the city of New York for those that want to explore mor
 
 Navigate to the web address of your server http://localhost:3000 (or whatever yours is), and add the endpoint `/nycplaces`
 
-## Cotributors
+## Contributors
 
 [Tania Aparicio](https://github.com/tanelam)
