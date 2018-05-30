@@ -7,6 +7,8 @@
 
 ![alt text](https://github.com/tanelam/NYC_Places_Frontend/blob/master/screenshot.jpg)
 
+[NYC Places Demo Video](https://youtu.be/y1XjOr0RSQA)
+
 ## How To Use
  
  * Navigate to http://localhost:3000/nycplaces in your browser.
