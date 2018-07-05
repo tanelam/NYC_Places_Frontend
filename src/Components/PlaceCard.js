@@ -1,32 +1,20 @@
 import React from "react"
-
 import { Link } from "react-router-dom"
 
-class PlaceCard extends React.Component{
-
-  render(){
-    // console.log(props.place)
-  return(
-
-    	<div className="grey card">
-        <div className="ui fluid image">
-          <Link to={`/nycplaces/${this.props.place.id}`} key={this.props.place.id} >
-            <img alt="" src={this.props.place.main_photo} id={this.props.place.id} />
-          </Link>
-        </div>
-
-        <div className="content">
-          <div className="header">
-            <h2 className="ui grey header">{this.props.place.name}</h2>
-          </div>
-        </div>
-
+const PlaceCard = (props) => (
+	<div className="grey card">
+    <div className="ui fluid image">
+      <Link to={`/nycplaces/${props.place.id}`} key={props.place.id} >
+        <img alt="" src={props.place.main_photo} id={props.place.id} />
+      </Link>
+    </div>
+    <div className="content">
+      <div className="header">
+        <h2 className="ui grey header">{props.place.name}</h2>
       </div>
-
-
-  )
-  }
-}
+    </div>
+  </div>
+)
 
 
 

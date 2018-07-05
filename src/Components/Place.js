@@ -145,12 +145,4 @@ class Place extends React.Component {
   }
 
 
-
-  // <div className="center aligned column">
-  //
-  //   <h2>Information:</h2>
-  //   <h3>{this.state.place.long_description}</h3>
-  //
-  // </div>
-
 export default Place
