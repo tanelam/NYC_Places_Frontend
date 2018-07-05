@@ -22,7 +22,7 @@ class PlacesContainer extends React.Component{
 
   handleResponse = (places) => {
     this.setState({
-      places: places
+      places
     })
   }
 

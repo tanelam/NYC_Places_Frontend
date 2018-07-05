@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from "react-router-dom"
 import Place from "./Components/Place"
 import PlacesContainer from "./Containers/PlacesContainer"

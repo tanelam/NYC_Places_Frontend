@@ -22,7 +22,7 @@ class Place extends React.Component {
 
   handleResponse = (place) => {
     this.setState({
-      place: place
+      place
     })
   }
 
