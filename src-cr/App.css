@@ -1,0 +1,14 @@
+
+.slide-container {
+  height: 100%;
+  width: 100%;
+  margin: auto; }
+
+.map{
+  width: 50%;
+  margin: auto;
+}
+
+body html {
+    height: 100%;
+}
