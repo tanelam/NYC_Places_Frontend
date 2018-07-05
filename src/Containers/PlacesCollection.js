@@ -2,7 +2,7 @@ import React from "react"
 
 import PlaceCard from "../Components/PlaceCard"
 
-import HeroImage from "../Components/HeroImage"
+import NewYorkImage from "../Components/NewYorkImage"
 
 
 class PlacesCollection extends React.Component{
@@ -24,7 +24,7 @@ class PlacesCollection extends React.Component{
        </div>
 
         <div className="ui container">
-          <HeroImage/>
+          <NewYorkImage/>
           <br/>
           <select name="select" onChange={this.props.handleChange} className="ui fluid normal dropdown">
             <option value="all">All</option>

@@ -2,7 +2,7 @@ import React from "react"
 import image from "./nyc.png"
 import "../App.css"
 
-const HeroImage = () => (
+const NewYorkImage = () => (
   <div className="ui three column grid">
     <div className="column"/>
     <div className="column"/>
@@ -13,4 +13,4 @@ const HeroImage = () => (
   </div>
 )
 
-export default HeroImage
+export default NewYorkImage

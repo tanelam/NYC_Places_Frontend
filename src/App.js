@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from "react-router-dom"
-import './App.css'
 import Place from "./Components/Place"
 import PlacesContainer from "./Containers/PlacesContainer"
+import './App.css'
 
 const App = () => (
   <div className="App">
