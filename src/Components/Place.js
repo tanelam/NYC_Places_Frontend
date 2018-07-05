@@ -1,13 +1,8 @@
 import React from "react"
-
 import { Slide } from 'react-slideshow-image';
-
 import Event from "./Event"
-
 import Map from "./Map"
-
 import Food from "./Food"
-
 
 class Place extends React.Component {
 
