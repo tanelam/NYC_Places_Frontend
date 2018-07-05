@@ -13,4 +13,10 @@ body html {
 .map{
   width: 50%;
   margin: auto;
+  height: 50vh;
+  width: 100%;
+}
+
+.heading-image {
+  height: 100px;
 }
