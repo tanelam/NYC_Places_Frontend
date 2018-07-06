@@ -9,11 +9,6 @@ const PlacesGallery = (props) => {
 
   return(
    <Fragment>
-    <div className="ui secondary pointing massive menu">
-     <a className="active grey item" href="/nycplaces">
-       NYC Places
-     </a>
-    </div>
     <div className="ui container">
       <NewYorkImage/>
       <br/>

@@ -6,17 +6,12 @@ import RenderMap from "../Container-Components/RenderMap"
 import RenderFoodCards from "../Container-Components/RenderFoodCards"
 
 const PlacePage = (props) => {
-  
+
   const { mainPhoto, photoTwo, cardPhoto, name, description, placeVideo, longDescription, zip, address, latitud, longitud } = props
   const images = [ mainPhoto, photoTwo ]
 
   return(
     <Fragment>
-      <div className="ui secondary pointing massive menu">
-        <a className="active grey item" href="/nycplaces">
-          NYC Places
-        </a>
-      </div>
       <div className="ui container">
         <div className="ui large header">
           <h1 className="ui grey large header">
@@ -30,8 +25,8 @@ const PlacePage = (props) => {
       <div className="ui one column grid">
         <div className="center aligned column">
           {placeVideo ?
-            <video src={placeVideo} width="100%" height="600" autoPlay/> :
-            <video src={video} width="100%" height="600" autoPlay/>
+            <video src={placeVideo} className="video" autoPlay/> :
+            <video src={video} className="video" autoPlay/>
           }
         </div>
       </div>
@@ -80,7 +75,7 @@ const PlacePage = (props) => {
       </div>
       <div className="ui one column grid">
         <div className="column">
-          <RenderMap longitud={longitud} latitud={latitud} />
+          <RenderMap longitud={longitud} latitud={latitud}/>
         </div>
       </div>
       <div className="ui one column grid">
