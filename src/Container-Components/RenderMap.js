@@ -15,6 +15,7 @@ class RenderMap extends Component {
     const lat = parseFloat(this.props.latitud || "40.75")
     const lng = parseFloat(this.props.longitud || "-73.98")
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+    const { zoom, latitud, longitud } = this.props
 
     return (
 
@@ -22,13 +23,13 @@ class RenderMap extends Component {
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
           bootstrapURLKeys={{ key: `${googleMapsApiKey}` }}
-          zoom={this.props.zoom}
-          latitud={this.props.latitud}
-          longitud={this.props.longitud}
+          zoom={zoom}
+          latitud={latitud}
+          longitud={longitud}
         >
           <Marker
-            lat={this.props.latitud}
-            lng={this.props.longitud}
+            lat={latitud}
+            lng={longitud}
           />
         </GoogleMapReact>
       </div>

@@ -6,6 +6,7 @@ class RenderEventCards extends Component{
 
   state = { events: [] }
 
+
   fetchEvents = (nextProps) => (
     yelpApiFetcher(corsURL+baseURL+`events?limit=4&radius=2&location=${nextProps.zip}&start_date=1527645110&end_date=1527645110&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`)
     .then(resp => resp.json())
@@ -32,10 +33,8 @@ class RenderEventCards extends Component{
 
   render(){
 
-     const filteredEvents = this.filterEvents()
-     const filter = filteredEvents.map((event, index) =>
-       <EventCard event={event} key={index}/>
-     )
+    const filteredEvents = this.filterEvents()
+    const recommendedEvents = filteredEvents.map((event, index) => <EventCard event={event} key={index}/>)
 
     return (
       <Fragment>
@@ -44,7 +43,7 @@ class RenderEventCards extends Component{
               <div className="ui huge text loader">Loading</div>
             </div> :
           <div className="ui four raised cards">
-            {filter}
+            {recommendedEvents}
           </div>
         }
       </Fragment>
