@@ -1,20 +1,15 @@
-import React, { Fragment } from "react"
+import React, { Component, Fragment } from "react"
+import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
 import EventCard from "../Presentional-Components/EventCard"
 
-const yelpApiKey = process.env.REACT_APP_YELP_API_KEY
-
-class Event extends React.Component{
+class Event extends Component{
 
   state = { events: [] }
 
   fetchEvents = (nextProps) => (
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/events?limit=4&radius=2&location=${nextProps.zip}&start_date=1527645110&end_date=1527645110&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`, {
-        headers: {
-          Authorization: `Bearer ${yelpApiKey}`
-        }
-      })
-      .then(resp => resp.json())
-      .then(events => this.handleResponse(events))
+    yelpApiFetcher(corsURL+baseURL+`events?limit=4&radius=2&location=${nextProps.zip}&start_date=1527645110&end_date=1527645110&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`)
+    .then(resp => resp.json())
+    .then(events => this.handleResponse(events))
   )
 
   componentWillReceiveProps(nextProps){

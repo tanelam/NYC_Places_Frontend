@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from "react"
 import { Slide } from 'react-slideshow-image';
+import { NYCplacesApiFetcher, baseURL } from "../utils/NYCplacesApiFetcher"
 import video from "../media/Urban-Timer.mp4"
 import Event from "./Event"
 import Map from "./Map"
@@ -10,7 +11,7 @@ class Place extends Component {
   state = { place: [] }
 
   fetchPlace = () => (
-    fetch(`http://localhost:8000/places/${this.props.match.params.id}`)
+    NYCplacesApiFetcher(baseURL+`${this.props.match.params.id}`)
     .then(resp => resp.json())
     .then(place => this.handleResponse(place))
   )

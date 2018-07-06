@@ -1,20 +1,15 @@
-import React, { Fragment } from "react"
+import React, { Component, Fragment } from "react"
+import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
 import FoodCard from "../Presentional-Components/FoodCard"
 
-const yelpApiKey = process.env.REACT_APP_YELP_API_KEY
-
-class Food extends React.Component{
+class Food extends Component{
 
   state = { food: [] }
 
   fetchFoods = (nextProps) => (
-    fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${nextProps.zip}&limit=4&categories=food`, {
-        headers: {
-          Authorization: `Bearer ${yelpApiKey}`
-        }
-      })
-      .then(resp => resp.json())
-      .then(food => this.handleResponse(food))
+    yelpApiFetcher(corsURL+baseURL+`businesses/search?location=${nextProps.zip}&limit=4&categories=food`)
+    .then(resp => resp.json())
+    .then(food => this.handleResponse(food))
   )
 
   componentWillReceiveProps(nextProps){

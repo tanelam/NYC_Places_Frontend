@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import { NYCplacesApiFetcher, baseURL } from "../utils/NYCplacesApiFetcher"
 import PlacesCollection from "../Presentional-Components/PlacesCollection"
 
 class PlacesContainer extends Component {
@@ -6,7 +7,7 @@ class PlacesContainer extends Component {
   state = { places: [], selectedCategory: "all" }
 
   fetchPlaces = () => (
-    fetch("http://localhost:8000/places")
+    NYCplacesApiFetcher(baseURL)
     .then(resp => resp.json())
     .then(places => this.handleResponse(places))
   )
