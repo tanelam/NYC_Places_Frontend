@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import image from "../media/eventImage.png"
 
 const EventCard = (props) => (
+
   <Fragment>
     <div className="card">
       <a className="image" href={props.event.event_site_url} target="_blank">
@@ -26,6 +27,7 @@ const EventCard = (props) => (
       </div>
     </div>
   </Fragment>
+  
 )
 
 

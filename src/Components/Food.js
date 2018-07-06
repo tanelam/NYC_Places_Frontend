@@ -1,18 +1,16 @@
-import React from "react"
+import React, { Fragment } from "react"
 import FoodCard from "./FoodCard"
+
+const yelpApiKey = process.env.REACT_APP_YELP_API_KEY
 
 class Food extends React.Component{
 
-  state = {
-    food: []
-  }
-
+  state = { food: [] }
 
   fetchFoods = (nextProps) => (
-
     fetch(`https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=${nextProps.zip}&limit=4&categories=food`, {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_YELP_API_KEY}`
+          Authorization: `Bearer ${yelpApiKey}`
         }
       })
       .then(resp => resp.json())
@@ -28,45 +26,30 @@ class Food extends React.Component{
 
   handleResponse = (food) => {
     // console.log(process.env.REACT_APP_YELP_API_KEY)
-    this.setState({
-      food: food
-    })
+    this.setState({ food })
   }
-  //
+
   filterFoods() {
     if(this.state.food.businesses){
-       return this.state.food.businesses.map((food) => {
-        return food
-    })
-    } else {
-      return this.state.food
+       return this.state.food.businesses.map((food) => food )
     }
+    return this.state.food
   }
 
   render(){
-    console.log(this.state.food)
+    // console.log(this.state.food)
      const filteredFoods = this.filterFoods()
-      console.log(filteredFoods)
+      // console.log(filteredFoods)
      const filter = filteredFoods.map((food, index) =>
        <FoodCard food={food} key={index}/>
      )
 
-     // {this.state.food.length === 0 ?
-     //
-     //     <div className="ui active inverted dimmer">
-     //       <div className="ui huge text loader">Loading</div>
-     //     </div> :
-     //   <div className="ui four cards">
-     //     {filter}
-     //   </div>
-     // }
-
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="ui four raised cards">
           {filter}
         </div>
-      </React.Fragment>
+      </Fragment>
     )
   }
 

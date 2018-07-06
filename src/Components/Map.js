@@ -11,11 +11,13 @@ class Map extends Component {
   };
 
   render() {
+
     const lat = parseFloat(this.props.latitud || "40.75")
     const lng = parseFloat(this.props.longitud || "-73.98")
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
 
     return (
+
       <div className="map">
         <GoogleMapReact
           center={{lat: lat, lng: lng}}
@@ -30,8 +32,10 @@ class Map extends Component {
           />
         </GoogleMapReact>
       </div>
-    );
+
+    )
   }
+  
 }
 
 export default Map;
