@@ -12,10 +12,10 @@ class RenderMap extends Component {
 
   render() {
 
-    const lat = parseFloat(this.props.latitud || "40.75")
-    const lng = parseFloat(this.props.longitud || "-73.98")
     const googleMapsApiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY
     const { zoom, latitud, longitud } = this.props
+    const lat = parseFloat(latitud || "40.75")
+    const lng = parseFloat(longitud || "-73.98")
 
     return (
 
