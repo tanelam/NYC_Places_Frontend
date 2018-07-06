@@ -2,9 +2,9 @@ import React, { Component, Fragment } from "react"
 import { Slide } from 'react-slideshow-image';
 import { NYCplacesApiFetcher, baseURL } from "../utils/NYCplacesApiFetcher"
 import video from "../media/Urban-Timer.mp4"
-import Event from "./Event"
-import Map from "./Map"
-import Food from "./Food"
+import RenderEventCards from "./RenderEventCards"
+import RenderMap from "./RenderMap"
+import RenderFoodCards from "./RenderFoodCards"
 
 class Place extends Component {
 
@@ -82,7 +82,7 @@ class Place extends Component {
         </div>
         <div className="ui one column grid">
           <div className="column">
-            <Event zip={zip}/>
+            <RenderEventCards zip={zip}/>
           </div>
         </div>
         <div className="ui two column grid">
@@ -99,7 +99,7 @@ class Place extends Component {
         </div>
         <div className="ui one column grid">
           <div className="column">
-            <Map longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
+            <RenderMap longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
           </div>
         </div>
         <div className="ui one column grid">
@@ -112,7 +112,7 @@ class Place extends Component {
         </div>
         <div className="ui one column grid">
           <div className="column">
-            <Food zip={zip}/>
+            <RenderFoodCards zip={zip}/>
           </div>
         </div>
        </div>

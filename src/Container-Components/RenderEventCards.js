@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
 import EventCard from "../Presentional-Components/EventCard"
 
-class Event extends Component{
+class RenderEventCards extends Component{
 
   state = { events: [] }
 
@@ -54,4 +54,4 @@ class Event extends Component{
 }
 
 
-export default Event
+export default RenderEventCards

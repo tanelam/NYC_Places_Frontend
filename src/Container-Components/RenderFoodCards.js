@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
 import FoodCard from "../Presentional-Components/FoodCard"
 
-class Food extends Component{
+class RenderFoodCards extends Component{
 
   state = { food: [] }
 
@@ -48,4 +48,4 @@ class Food extends Component{
 }
 
 
-export default Food
+export default RenderFoodCards

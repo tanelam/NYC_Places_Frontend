@@ -3,7 +3,7 @@ import GoogleMapReact from 'google-map-react';
 import Marker from "../Presentional-Components/MapMarker"
 import "../App.css"
 
-class Map extends Component {
+class RenderMap extends Component {
 
   static defaultProps =  {
     center: {lat: 40.73, lng: -73.93},
@@ -38,4 +38,4 @@ class Map extends Component {
 
 }
 
-export default Map;
+export default RenderMap;
