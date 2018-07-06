@@ -27,7 +27,7 @@ const EventCard = (props) => (
       </div>
     </div>
   </Fragment>
-  
+
 )
 
 

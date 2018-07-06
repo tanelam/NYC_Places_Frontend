@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react"
-import PlaceCard from "../Components/PlaceCard"
-import NewYorkImage from "../Components/NewYorkImage"
+import PlaceCard from "./PlaceCard"
+import NewYorkImage from "./NewYorkImage"
 
 class PlacesCollection extends Component{
   render(){

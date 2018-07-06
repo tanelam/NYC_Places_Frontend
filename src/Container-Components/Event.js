@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import EventCard from "./EventCard"
+import EventCard from "../Presentional-Components/EventCard"
 
 const yelpApiKey = process.env.REACT_APP_YELP_API_KEY
 

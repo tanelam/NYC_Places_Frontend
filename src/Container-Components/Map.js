@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import Marker from "./MapMarker.js"
+import Marker from "../Presentional-Components/MapMarker"
 import "../App.css"
 
 class Map extends Component {
@@ -35,7 +35,7 @@ class Map extends Component {
 
     )
   }
-  
+
 }
 
 export default Map;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom"
-import Place from "./Components/Place"
-import PlacesContainer from "./Containers/PlacesContainer"
+import Place from "./Container-Components/Place"
+import PlacesContainer from "./Container-Components/PlacesContainer"
 import './App.css'
 
 const App = () => (

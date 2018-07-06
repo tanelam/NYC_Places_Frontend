@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import FoodCard from "./FoodCard"
+import FoodCard from "../Presentional-Components/FoodCard"
 
 const yelpApiKey = process.env.REACT_APP_YELP_API_KEY
 
@@ -25,7 +25,6 @@ class Food extends React.Component{
   }
 
   handleResponse = (food) => {
-    // console.log(process.env.REACT_APP_YELP_API_KEY)
     this.setState({ food })
   }
 

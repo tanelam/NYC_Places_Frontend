@@ -1,12 +1,9 @@
 import React, { Component } from "react"
-import PlacesCollection from "./PlacesCollection"
+import PlacesCollection from "../Presentional-Components/PlacesCollection"
 
 class PlacesContainer extends Component {
 
-  state = {
-    places: [],
-    selectedCategory: "all"
-  }
+  state = { places: [], selectedCategory: "all" }
 
   fetchPlaces = () => (
     fetch("http://localhost:8000/places")
@@ -19,22 +16,17 @@ class PlacesContainer extends Component {
   }
 
   handleResponse = (places) => {
-    this.setState({
-      places
-    })
+    this.setState({ places })
   }
 
   handleChange = (event) => {
-    this.setState({
-      selectedCategory: event.target.value
-    })
+    this.setState({ selectedCategory: event.target.value })
   }
 
   filterCategory = () => {
     if(this.state.selectedCategory === "all"){
       return this.state.places
     }
-
     const places = [...this.state.places]
     return places.filter(place => place.category === this.state.selectedCategory)
   }
