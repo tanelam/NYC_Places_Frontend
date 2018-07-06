@@ -25,15 +25,13 @@ class Food extends Component{
 
   filterFoods() {
     if(this.state.food.businesses){
-       return this.state.food.businesses.map((food) => food )
+       return this.state.food.businesses.map(food => food )
     }
     return this.state.food
   }
 
   render(){
-    // console.log(this.state.food)
      const filteredFoods = this.filterFoods()
-      // console.log(filteredFoods)
      const filter = filteredFoods.map((food, index) =>
        <FoodCard food={food} key={index}/>
      )

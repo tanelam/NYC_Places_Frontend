@@ -25,14 +25,13 @@ class Event extends Component{
 
   filterEvents() {
     if(this.state.events.events){
-      return this.state.events.events.map( (event) => event)
+      return this.state.events.events.map(event => event)
     }
     return this.state.events
   }
 
   render(){
-    // console.log(this.state.events)
-    // console.log(filteredEvents)
+
      const filteredEvents = this.filterEvents()
      const filter = filteredEvents.map((event, index) =>
        <EventCard event={event} key={index}/>
