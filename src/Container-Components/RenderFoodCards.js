@@ -4,42 +4,40 @@ import FoodCard from "../Presentional-Components/FoodCard"
 
 class RenderFoodCards extends Component{
 
-  state = { food: [] }
+  state = { foodPlaces: [] }
 
-  fetchFoods = (nextProps) => (
+  fetchFoodPlaces = (nextProps) => (
     yelpApiFetcher(corsURL+baseURL+`businesses/search?location=${nextProps.zip}&limit=4&categories=food`)
     .then(resp => resp.json())
-    .then(food => this.handleResponse(food))
+    .then(foodPlaces => this.handleResponse(foodPlaces))
   )
 
   componentWillReceiveProps(nextProps){
     // console.log(this.props.zip, nextProps)
     if(this.props.zip !== nextProps.zip){
-      this.fetchFoods(nextProps)
+      this.fetchFoodPlaces(nextProps)
     }
   }
 
-  handleResponse = (food) => {
-    this.setState({ food })
+  handleResponse = (foodPlaces) => {
+    this.setState({ foodPlaces })
   }
 
-  filterFoods() {
-    if(this.state.food.businesses){
-       return this.state.food.businesses.map(food => food )
+  filterFoodPlaces() {
+    if(this.state.foodPlaces.businesses){
+      return this.state.foodPlaces.businesses.map(foodPlace => foodPlace)
     }
-    return this.state.food
+    return this.state.foodPlaces
   }
 
   render(){
-     const filteredFoods = this.filterFoods()
-     const filter = filteredFoods.map((food, index) =>
-       <FoodCard food={food} key={index}/>
-     )
+    const filteredFoodPlaces = this.filterFoodPlaces()
+    const recommendedFoodPlaces = filteredFoodPlaces.map((foodPlace, index) => <FoodCard food={foodPlace} key={index}/>)
 
     return (
       <Fragment>
         <div className="ui four raised cards">
-          {filter}
+          {recommendedFoodPlaces}
         </div>
       </Fragment>
     )
