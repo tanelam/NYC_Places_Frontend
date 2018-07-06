@@ -24,10 +24,12 @@ class RenderFoodCards extends Component{
   }
 
   filterFoodPlaces() {
-    if(this.state.foodPlaces.businesses){
-      return this.state.foodPlaces.businesses.map(foodPlace => foodPlace)
+    const { foodPlaces } = this.state
+
+    if(foodPlaces.businesses){
+      return foodPlaces.businesses.map(foodPlace => foodPlace)
     }
-    return this.state.foodPlaces
+    return foodPlaces
   }
 
   render(){

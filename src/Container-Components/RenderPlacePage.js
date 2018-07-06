@@ -1,10 +1,6 @@
-import React, { Component, Fragment } from "react"
-import { Slide } from 'react-slideshow-image';
+import React, { Component } from "react"
 import { NYCplacesApiFetcher, baseURL } from "../utils/NYCplacesApiFetcher"
-import video from "../media/Urban-Timer.mp4"
-import RenderEventCards from "./RenderEventCards"
-import RenderMap from "./RenderMap"
-import RenderFoodCards from "./RenderFoodCards"
+import PlacePage from "../Presentional-Components/PlacePage"
 
 class RenderPlacePage extends Component {
 
@@ -25,100 +21,27 @@ class RenderPlacePage extends Component {
   }
 
   render(){
-    const images = [ this.state.place.main_photo, this.state.place.photo_2 ]
-    const zip = (this.state.place.zip || "10174")
+
+    const { main_photo, photo_2, card_photo, name, description, video, long_description, address, latitud, longitud, zip} = this.state.place
+    const zipCode = (zip || "10174")
 
     return(
-
-      <Fragment>
-        <div className="ui secondary pointing massive menu">
-          <a className="active grey item" href="/nycplaces">
-            NYC Places
-          </a>
-        </div>
-        <div className="ui container">
-          <div className="ui large header">
-            <h1 className="ui grey large header">
-              <img src={this.state.place.card_photo} className="ui circular image" alt=""/>
-                <div className="content">
-                  {this.state.place.name}
-                  <div className="sub header">{this.state.place.description}</div>
-                </div>
-            </h1>
-          </div>
-        <div className="ui one column grid">
-          <div className="center aligned column">
-            {this.state.place.video ?
-              <video src={this.state.place.video} width="100%" height="600" autoPlay/> :
-              <video src={video} width="100%" height="600" autoPlay/>
-            }
-          </div>
-        </div>
-        <div className="ui two column grid">
-          <div className="row">
-            <div className="eight wide column">
-              <br/>
-              <div className="slide-container">
-                <Slide
-                   images={ images }
-                   duration={100000}
-                   transitionDuration={2000}
-                 />
-              </div>
-            </div>
-            <div className="center aligned column">
-              <p/>
-              <h3 className="ui grey header">{this.state.place.long_description}</h3>
-            </div>
-          </div>
-        </div>
-        <div className="ui one column grid">
-          <div className="left aligned column">
-            <br/>
-            <div className="ui dividing large header">
-              <p className="ui grey large header">Events Near Here</p>
-            </div>
-          </div>
-        </div>
-        <div className="ui one column grid">
-          <div className="column">
-            <RenderEventCards zip={zip}/>
-          </div>
-        </div>
-        <div className="ui two column grid">
-          <div className="column">
-            <br/>
-            <h2 className="ui grey header">Address: </h2>
-            <h3 className="ui grey header">{this.state.place.address}</h3>
-          </div>
-          <div className="right aligned column">
-            <br/>
-            <p className="ui grey huge header">{this.state.place.latitud}</p>
-            <p className="ui grey huge header">{this.state.place.longitud}</p>
-          </div>
-        </div>
-        <div className="ui one column grid">
-          <div className="column">
-            <RenderMap longitud={this.state.place.longitud} latitud={this.state.place.latitud} />
-          </div>
-        </div>
-        <div className="ui one column grid">
-          <div className="left aligned column">
-            <div className="ui dividing large header">
-              <br/>
-              <p className="ui grey large header">Food Near Here</p>
-            </div>
-          </div>
-        </div>
-        <div className="ui one column grid">
-          <div className="column">
-            <RenderFoodCards zip={zip}/>
-          </div>
-        </div>
-       </div>
-      </Fragment>
+      <div>
+        <PlacePage
+          mainPhoto={main_photo}
+          photoTwo={photo_2}
+          cardPhoto={card_photo}
+          name={name}
+          description={description}
+          placeVideo={video}
+          longDescription={long_description}
+          address={address}
+          longitud={longitud}
+          latitud={latitud}
+          zip={zipCode}
+          />
+      </div>
     )
-
   }
 }
 

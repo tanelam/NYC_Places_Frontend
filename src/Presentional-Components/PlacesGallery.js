@@ -19,7 +19,7 @@ const PlacesGallery = (props) => {
       <br/>
       <CategoriesSelectMenu handleChange={props.handleChange}/>
       <br/>
-     <div className="ui three cards">{place}</div>
+      <div className="ui three cards">{place}</div>
     </div>
    </Fragment>
   )

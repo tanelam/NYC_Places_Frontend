@@ -25,11 +25,13 @@ class RenderPlacesGallery extends Component {
   }
 
   filterCategory = () => {
-    if(this.state.selectedCategory === "all"){
-      return this.state.places
+    const { selectedCategory, places } = this.state
+
+    if(selectedCategory === "all"){
+      return places
     }
-    const places = [...this.state.places]
-    return places.filter(place => place.category === this.state.selectedCategory)
+    const placesCopy = [...places]
+    return placesCopy.filter(place => place.category === selectedCategory)
   }
 
   render(){

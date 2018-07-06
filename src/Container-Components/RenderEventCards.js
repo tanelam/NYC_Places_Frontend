@@ -25,10 +25,12 @@ class RenderEventCards extends Component{
   }
 
   filterEvents() {
-    if(this.state.events.events){
-      return this.state.events.events.map(event => event)
+    const { events } = this.state
+
+    if(events.events){
+      return events.events.map(event => event)
     }
-    return this.state.events
+    return events
   }
 
   render(){
