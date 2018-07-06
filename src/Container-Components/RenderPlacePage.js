@@ -6,7 +6,7 @@ import RenderEventCards from "./RenderEventCards"
 import RenderMap from "./RenderMap"
 import RenderFoodCards from "./RenderFoodCards"
 
-class Place extends Component {
+class RenderPlacePage extends Component {
 
   state = { place: [] }
 
@@ -123,4 +123,4 @@ class Place extends Component {
 }
 
 
-export default Place
+export default RenderPlacePage
