@@ -32,7 +32,7 @@ class RenderFoodCards extends Component{
 
   render(){
     const filteredFoodPlaces = this.filterFoodPlaces()
-    const recommendedFoodPlaces = filteredFoodPlaces.map((foodPlace, index) => <FoodCard food={foodPlace} key={index}/>)
+    const recommendedFoodPlaces = filteredFoodPlaces.map((foodPlace, index) => <FoodCard place={foodPlace} key={index}/>)
 
     return (
       <Fragment>
