@@ -1,9 +1,7 @@
-import React from "react"
-
+import React, { Component } from "react"
 import PlacesCollection from "./PlacesCollection"
 
-
-class PlacesContainer extends React.Component{
+class PlacesContainer extends Component {
 
   state = {
     places: [],
@@ -35,10 +33,10 @@ class PlacesContainer extends React.Component{
   filterCategory = () => {
     if(this.state.selectedCategory === "all"){
       return this.state.places
-    }else{
-      const places = [...this.state.places]
-      return places.filter(place => place.category === this.state.selectedCategory)
     }
+
+    const places = [...this.state.places]
+    return places.filter(place => place.category === this.state.selectedCategory)
   }
 
   render(){
@@ -46,8 +44,7 @@ class PlacesContainer extends React.Component{
     const filteredCategories = this.filterCategory()
     return(
       <div>
-         <PlacesCollection places={filteredCategories}  handleChange={this.handleChange}/>
-
+        <PlacesCollection places={filteredCategories}  handleChange={this.handleChange}/>
       </div>
     )
   }

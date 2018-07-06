@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import image from "./eventImage.png"
+import image from "../media/eventImage.png"
 
 const FoodCard = (props) => (
   <Fragment>

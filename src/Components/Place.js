@@ -1,10 +1,11 @@
-import React from "react"
+import React, { Component } from "react"
 import { Slide } from 'react-slideshow-image';
+import video from "../media/Urban-Timer.mp4"
 import Event from "./Event"
 import Map from "./Map"
 import Food from "./Food"
 
-class Place extends React.Component {
+class Place extends Component {
 
   state = {
     place: [],
@@ -62,7 +63,7 @@ class Place extends React.Component {
               {this.state.place.video !== null ?
               <video src={this.state.place.video} width="100%" height="600" autoPlay>
               </video> :
-              <video src={require("./Urban-Timer.mp4")} width="100%" height="600" autoPlay/>
+              <video src={video} width="100%" height="600" autoPlay/>
             }
             </div>
         </div>

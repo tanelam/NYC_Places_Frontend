@@ -1,5 +1,5 @@
 import React from "react"
-import image from "./nyc.png"
+import image from "../media/nyc.png"
 import "../App.css"
 
 const NewYorkImage = () => (

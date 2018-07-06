@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import image from "./starpin.png"
+import image from "../media/starpin.png"
 
 const MapMarker = () => (
   <Fragment>
