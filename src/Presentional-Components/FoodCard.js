@@ -18,7 +18,7 @@ const FoodCard = (props) => (
       </div>
     </div>
   </Fragment>
-  
+
 )
 
 export default FoodCard

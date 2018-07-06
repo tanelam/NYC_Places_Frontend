@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { NYCplacesApiFetcher, baseURL } from "../utils/NYCplacesApiFetcher"
-import PlacesCollection from "../Presentional-Components/PlacesCollection"
+import PlacesGallery from "../Presentional-Components/PlacesGallery"
 
-class PlacesContainer extends Component {
+class RenderPlacesGallery extends Component {
 
   state = { places: [], selectedCategory: "all" }
 
@@ -37,10 +37,10 @@ class PlacesContainer extends Component {
     const filteredCategories = this.filterCategory()
     return(
       <div>
-        <PlacesCollection places={filteredCategories}  handleChange={this.handleChange}/>
+        <PlacesGallery places={filteredCategories}  handleChange={this.handleChange}/>
       </div>
     )
   }
 }
 
-export default PlacesContainer
+export default RenderPlacesGallery
