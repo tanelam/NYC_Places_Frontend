@@ -21,7 +21,7 @@ class RenderMap extends Component {
 
       <div className="map">
         <GoogleMapReact
-          center={{lat: lat, lng: lng}}
+          center={{lat, lng}}
           bootstrapURLKeys={{ key: `${googleMapsApiKey}` }}
           zoom={zoom}
           latitud={latitud}

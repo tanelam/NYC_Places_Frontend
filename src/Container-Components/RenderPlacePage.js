@@ -22,28 +22,14 @@ class RenderPlacePage extends Component {
 
   render(){
 
-    const { main_photo, photo_2, card_photo, name, description, video, long_description, address, latitud, longitud, zip} = this.state.place
-    const zipCode = (zip || "10174")
+    const zipCode = (this.state.place.zip || "10174")
 
     return(
       <div>
-        <PlacePage
-          mainPhoto={main_photo}
-          photoTwo={photo_2}
-          cardPhoto={card_photo}
-          name={name}
-          description={description}
-          placeVideo={video}
-          longDescription={long_description}
-          address={address}
-          longitud={longitud}
-          latitud={latitud}
-          zip={zipCode}
-          />
+        <PlacePage place={this.state.place} zip={zipCode}/>
       </div>
     )
   }
 }
-
 
 export default RenderPlacePage

@@ -1,21 +1,21 @@
 import React, { Fragment } from "react"
 import { Slide } from 'react-slideshow-image'
-import video from "../media/Urban-Timer.mp4"
+import streetVideo from "../media/Urban-Timer.mp4"
 import RenderEventCards from "../Container-Components/RenderEventCards"
 import RenderMap from "../Container-Components/RenderMap"
 import RenderFoodCards from "../Container-Components/RenderFoodCards"
 
 const PlacePage = (props) => {
 
-  const { mainPhoto, photoTwo, cardPhoto, name, description, placeVideo, longDescription, zip, address, latitud, longitud } = props
-  const images = [ mainPhoto, photoTwo ]
+  const { main_photo, photo_2, card_photo, name, description, video, long_description, zip, address, latitud, longitud } = props.place
+  const images = [ main_photo, photo_2 ]
 
   return(
     <Fragment>
       <div className="ui container">
         <div className="ui large header">
           <h1 className="ui grey large header">
-            <img src={cardPhoto} className="ui circular image" alt=""/>
+            <img src={card_photo} className="ui circular image" alt=""/>
               <div className="content">
                 {name}
                 <div className="sub header">{description}</div>
@@ -24,9 +24,9 @@ const PlacePage = (props) => {
         </div>
       <div className="ui one column grid">
         <div className="center aligned column">
-          {placeVideo ?
-            <video src={placeVideo} className="video" autoPlay/> :
-            <video src={video} className="video" autoPlay/>
+          {video ?
+            <video src={video} className="video" autoPlay/> :
+            <video src={streetVideo} className="video" autoPlay/>
           }
         </div>
       </div>
@@ -44,7 +44,7 @@ const PlacePage = (props) => {
           </div>
           <div className="center aligned column">
             <p/>
-            <h3 className="ui grey header">{longDescription}</h3>
+            <h3 className="ui grey header">{long_description}</h3>
           </div>
         </div>
       </div>

@@ -35,8 +35,9 @@ class RenderPlacesGallery extends Component {
   }
 
   render(){
-    // console.log(this.state)
+
     const filteredCategories = this.filterCategory()
+    
     return(
       <div>
         <PlacesGallery places={filteredCategories}  handleChange={this.handleChange}/>
