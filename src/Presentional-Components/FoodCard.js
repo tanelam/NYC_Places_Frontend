@@ -11,7 +11,8 @@ const FoodCard = (props) => {
         <a className="image" href={url} target="_blank">
           {image_url ?
             <img src={image_url} alt="" /> :
-            <img src={image} alt="" />}
+            <img src={image} alt="" />
+          }
         </a>
         <div className="content">
           <a className="ui grey header" href={url} target="_blank">{name}</a>

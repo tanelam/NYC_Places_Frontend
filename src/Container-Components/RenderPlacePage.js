@@ -22,11 +22,12 @@ class RenderPlacePage extends Component {
 
   render(){
 
-    const zipCode = (this.state.place.zip || "10174")
+    const { place } = this.state
+    const zipCode = (place.zip || "10174")
 
     return(
       <div>
-        <PlacePage place={this.state.place} zip={zipCode}/>
+        <PlacePage place={place} zip={zipCode}/>
       </div>
     )
   }
