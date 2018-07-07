@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 const PlaceCard = (props) => {
 
 	const { id, main_photo, name } = props.place
-	
+
 	return(
 		<div className="grey card">
 	    <div className="ui fluid image">
@@ -19,7 +19,6 @@ const PlaceCard = (props) => {
 	    </div>
 	  </div>
 	)
-
 }
 
 
