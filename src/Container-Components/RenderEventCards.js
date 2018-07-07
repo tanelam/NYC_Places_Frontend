@@ -40,9 +40,9 @@ class RenderEventCards extends Component{
     return (
       <Fragment>
         {this.state.events.length === 0 ?
-            <div className="ui active inverted dimmer">
-              <div className="ui huge text loader">Loading</div>
-            </div> :
+          <div className="ui active inverted dimmer">
+            <div className="ui huge text loader">Loading</div>
+          </div> :
           <div className="ui four raised cards">
             {recommendedEvents}
           </div>
