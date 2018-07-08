@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react"
-import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
+import { yelpApiFetcher, corsURL, baseURL, FoodPlacesLocation, FoodPlacesLimitAndCategories } from "../utils/yelpApiFetcher"
 import FoodCard from "../Presentional-Components/FoodCard"
 
 class RenderFoodCards extends Component{
@@ -7,7 +7,7 @@ class RenderFoodCards extends Component{
   state = { foodPlaces: [] }
 
   fetchFoodPlaces = (nextProps) => (
-    yelpApiFetcher(corsURL+baseURL+`businesses/search?location=${nextProps.zip}&limit=4&categories=food`)
+    yelpApiFetcher(corsURL+baseURL+FoodPlacesLocation+`${nextProps.zip}`+FoodPlacesLimitAndCategories)
     .then(resp => resp.json())
     .then(foodPlaces => this.handleResponse(foodPlaces))
   )
@@ -33,7 +33,7 @@ class RenderFoodCards extends Component{
   }
 
   render(){
-    
+
     const filteredFoodPlaces = this.filterFoodPlaces()
     const recommendedFoodPlaces = filteredFoodPlaces.map((foodPlace, index) => <FoodCard place={foodPlace} key={index}/>)
 

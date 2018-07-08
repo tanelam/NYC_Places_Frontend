@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react"
-import { yelpApiFetcher, corsURL, baseURL } from "../utils/yelpApiFetcher"
+import { yelpApiFetcher, corsURL, baseURL, EventsLimitAndRadius, EventsDateAndCategories } from "../utils/yelpApiFetcher"
 import EventCard from "../Presentional-Components/EventCard"
 
 class RenderEventCards extends Component{
@@ -7,7 +7,7 @@ class RenderEventCards extends Component{
   state = { events: [] }
 
   fetchEvents = (nextProps) => (
-    yelpApiFetcher(corsURL+baseURL+`events?limit=4&radius=2&location=${nextProps.zip}&start_date=1527645110&end_date=1527645110&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`)
+    yelpApiFetcher(corsURL+baseURL+EventsLimitAndRadius+`${nextProps.zip}`+EventsDateAndCategories)
     .then(resp => resp.json())
     .then(events => this.handleResponse(events))
   )
