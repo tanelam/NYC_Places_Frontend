@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { string, object } from "prop-types"
 import image from "../media/eventImage.png"
 
 const EventCard = (props) => {
@@ -31,7 +32,15 @@ const EventCard = (props) => {
       </div>
     </Fragment>
   )
+}
 
+EventCard.propTypes = {
+  event_site_url: string,
+  image_url: string,
+  name: string,
+  location: object,
+  time_start: string,
+  time_end: string
 }
 
 export default EventCard

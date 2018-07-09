@@ -21,6 +21,4 @@ const PlaceCard = (props) => {
 	)
 }
 
-
-
 export default PlaceCard

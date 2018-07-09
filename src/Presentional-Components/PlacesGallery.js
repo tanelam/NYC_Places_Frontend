@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { array } from "prop-types"
 import PlaceCard from "./PlaceCard"
 import NewYorkImage from "./NewYorkImage"
 import CategoriesSelectMenu from "./CategoriesSelectMenu"
@@ -20,5 +21,8 @@ const PlacesGallery = (props) => {
   )
 }
 
+PlacesGallery.propTypes = {
+  places: array
+}
 
 export default PlacesGallery

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
-import { yelpApiFetcher, corsURL, baseURL, FoodPlacesLocation, FoodPlacesLimitAndCategories } from "../utils/yelpApiFetcher"
+import { string } from "prop-types"
 import FoodCard from "../Presentional-Components/FoodCard"
+import { yelpApiFetcher, corsURL, baseURL, FoodPlacesLocation, FoodPlacesLimitAndCategories } from "../utils/yelpApiFetcher"
 
 class RenderFoodCards extends Component{
 
@@ -45,8 +46,10 @@ class RenderFoodCards extends Component{
       </Fragment>
     )
   }
-
 }
 
+RenderFoodCards.propTypes = {
+  zip: string
+}
 
 export default RenderFoodCards

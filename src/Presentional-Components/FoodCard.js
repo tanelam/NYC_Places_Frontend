@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { string, object } from "prop-types"
 import image from "../media/eventImage.png"
 
 const FoodCard = (props) => {
@@ -23,6 +24,13 @@ const FoodCard = (props) => {
       </div>
     </Fragment>
   )
+}
+
+FoodCard.propTypes = {
+  url: string,
+  image_url: string,
+  name: string,
+  location: object
 }
 
 export default FoodCard
