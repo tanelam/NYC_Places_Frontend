@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from "react"
-import { yelpApiFetcher, corsURL, baseURL, EventsLimitAndRadius, EventsDateAndCategories } from "../utils/yelpApiFetcher"
+import { string } from "prop-types"
 import EventCard from "../Presentional-Components/EventCard"
+import { yelpApiFetcher, corsURL, baseURL, EventsLimitAndRadius, EventsDateAndCategories } from "../utils/yelpApiFetcher"
 
 class RenderEventCards extends Component{
 
@@ -50,8 +51,10 @@ class RenderEventCards extends Component{
       </Fragment>
     )
   }
-
 }
 
+RenderEventCards.propTypes = {
+  zip: string
+}
 
 export default RenderEventCards

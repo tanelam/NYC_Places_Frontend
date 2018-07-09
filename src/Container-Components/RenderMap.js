@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { number, string } from "prop-types"
 import GoogleMapReact from 'google-map-react';
 import Marker from "../Presentional-Components/MapMarker"
 import "../App.css"
@@ -36,7 +37,12 @@ class RenderMap extends Component {
 
     )
   }
+}
 
+RenderMap.propTypes = {
+  zoom: number,
+  latitud: string,
+  longitud: string
 }
 
 export default RenderMap;

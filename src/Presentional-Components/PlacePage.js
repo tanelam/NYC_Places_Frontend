@@ -1,4 +1,5 @@
 import React, { Fragment } from "react"
+import { string } from "prop-types"
 import { Slide } from 'react-slideshow-image'
 import streetVideo from "../media/Urban-Timer.mp4"
 import RenderEventCards from "../Container-Components/RenderEventCards"
@@ -94,6 +95,21 @@ const PlacePage = (props) => {
      </div>
     </Fragment>
   )
+}
+
+PlacePage.propTypes = {
+  main_photo: string,
+  photo_2: string,
+  card_photo: string,
+  name: string,
+  description: string,
+  video: string,
+  long_description: string,
+  zip: string,
+  address: string,
+  latitud: string,
+  longitud: string
+
 }
 
 export default PlacePage
