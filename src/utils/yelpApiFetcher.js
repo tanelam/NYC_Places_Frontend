@@ -7,7 +7,7 @@ export const baseURL = "https://api.yelp.com/v3/"
 const TimeStamp = Math.round(new Date().getTime()/1000.0)
 
 //EventsURL's
-export const EventsLimitAndRadius = "events?limit=4&radius=2&location="
+export const EventsLimitRadiusLocation = "events?limit=4&radius=2&location="
 export const EventsDateAndCategories = `&start_date=${TimeStamp}&end_date=${TimeStamp}&categories=music,visual-arts,fashion,food-and-drink,festivals-fairs,kids-family`
 
 //FoodPlacesURL's

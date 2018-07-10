@@ -1,14 +1,14 @@
 import React, { Component, Fragment } from "react"
 import { string } from "prop-types"
 import EventCard from "../Presentional-Components/EventCard"
-import { yelpApiFetcher, corsURL, baseURL, EventsLimitAndRadius, EventsDateAndCategories } from "../utils/yelpApiFetcher"
+import { yelpApiFetcher, corsURL, baseURL, EventsLimitRadiusLocation, EventsDateAndCategories } from "../utils/yelpApiFetcher"
 
 class RenderEventCards extends Component{
 
   state = { events: [] }
 
   fetchEvents = (nextProps) => (
-    yelpApiFetcher(corsURL+baseURL+EventsLimitAndRadius+`${nextProps.zip}`+EventsDateAndCategories)
+    yelpApiFetcher(corsURL+baseURL+EventsLimitRadiusLocation+`${nextProps.zip}`+EventsDateAndCategories)
     .then(resp => resp.json())
     .then(events => this.handleResponse(events))
   )
